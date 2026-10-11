@@ -16,10 +16,6 @@ Student::Student()
 
 /**
  * @brief Создает студента без сданных сессий
- *
- * @param fullName Имя студента
- * @param age Возраст студента
- * @param group Учебная группа
  */
 Student::Student(const std::string& fullName, int age, const Group& group)
     : Student(fullName, age, 0.0, group)
@@ -28,11 +24,6 @@ Student::Student(const std::string& fullName, int age, const Group& group)
 
 /**
  * @brief Создает студента с заданным средним баллом
- *
- * @param fullName Имя студента
- * @param age Возраст студента
- * @param averageGrade Средний балл
- * @param group Учебная группа
  */
 Student::Student(const std::string& fullName, int age,
                  double averageGrade, const Group& group)

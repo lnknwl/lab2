@@ -12,9 +12,6 @@ Group::Group()
 
 /**
  * @brief Создает группу с заданным названием и курсом
- *
- * @param name Название группы
- * @param course Курс от 1 до 6
  */
 Group::Group(const std::string& name, int course)
     : name(name), course(course)
