@@ -1,0 +1,47 @@
+@startuml
+title Лабораторная работа №2. Вариант 4 — Студент
+skinparam classAttributeIconSize 0
+
+class Group {
+    - name : std::string
+    - course : int
+    + Group()
+    + Group(name : const std::string&, course : int)
+    + ~Group()
+    + getName() const : const std::string&
+    + getCourse() const : int
+    + advanceCourse() : bool
+    + printInfo() const : void
+}
+
+class Student {
+    - fullName : std::string
+    - age : int
+    - averageGrade : double
+    - sessionCount : int
+    - studying : bool
+    - group : Group
+    - {static} objectCount : int
+    + Student()
+    + Student(fullName : const std::string&, age : int, group : const Group&)
+    + Student(fullName : const std::string&, age : int, averageGrade : double, group : const Group&)
+    + Student(other : const Student&)
+    + operator=(other : const Student&) : Student&
+    + ~Student()
+    + getFullName() const : const std::string&
+    + getAge() const : int
+    + getAverageGrade() const : double
+    + getSessionCount() const : int
+    + isStudying() const : bool
+    + getGroup() const : const Group&
+    + {static} getObjectCount() : int
+    + passSession(grade : double) : bool
+    + transferToGroup(newGroup : const Group&) : bool
+    + celebrateBirthday() : bool
+    + expel() : bool
+    + restore(newGroup : const Group&) : bool
+    + printInfo() const : void
+}
+
+Student "1" *-- "1" Group : хранит копию группы
+@enduml
